@@ -14,6 +14,10 @@ $(document).ready(function () {
 
     function getRecipes(ingredient) {
         // Implement recipe fetching logic here
+        function getRecipes(ingredient) {
+    window.location.href = `recipe_results.html?ingredient=${ingredient}`;
+}
+
     }
 
     function getNutrientInfo(ingredient) {
