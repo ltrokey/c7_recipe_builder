@@ -15,7 +15,10 @@ $(document).ready(function () {
     function displayRecipes(recipes) {
         const recipeList = $('#recipeList');
         recipes.slice(0, 10).forEach(recipe => {
-            const listItem = `<li>${recipe.name}</li>`;
+           const listItem = `<li>
+            <span>${recipe.name}</span>
+            <a href="recipe_details.html?name=${encodeURIComponent(recipe.name)}&servingSize=${recipe.servingSize}&prepTime=${recipe.prepTime}&ingredients=${encodeURIComponent(JSON.stringify(recipe.ingredients))}&instructions=${encodeURIComponent(JSON.stringify(recipe.instructions))}&imageUrl=${recipe.imageUrl}">View Details</a>
+        </li>`;
             recipeList.append(listItem);
         });
     }
