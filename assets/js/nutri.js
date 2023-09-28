@@ -16,10 +16,16 @@ $(document).ready(function () {
           .then(function(data) {
             console.log(data)
           })
+           .catch(function(error){
+               console.error('Error:', error);
+           });
       }
+    $('#searchType').change(function(){
+        var selectedOption = $(this).val();
+        if(selectedOption ==='nutrient'){
 
       getIngredient()
-    // all code goes inside this function
+    }
 
-
-})
+    });
+});
