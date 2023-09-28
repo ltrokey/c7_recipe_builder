@@ -14,7 +14,23 @@ $(document).ready(function () {
               return response.json()
           })
           .then(function(data) {
-            console.log(data)
+            for (var i = 0; i < 10; i++) {
+              console.log(data.hints[i])
+              // Image
+              console.log(data.hints[i].food.image)
+              // Name
+              console.log(data.hints[i].food.label)
+              //Carbohydrate Unit Gram
+              console.log(data.hints[i].food.nutrients.CHOCDF)
+              //Energy Unit Kcal
+              console.log(data.hints[i].food.nutrients.ENERC_KCAL)
+              // Protein Unit Gram
+              console.log(data.hints[i].food.nutrients.PROCNT)
+              // Fat Unit Gram
+              console.log(data.hints[i].food.nutrients.FAT)
+              // Fiber Unit Gram
+              console.log(data.hints[i].food.nutrients.FIBTG)
+            }
           })
       }
 
