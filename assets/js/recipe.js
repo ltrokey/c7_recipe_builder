@@ -4,8 +4,9 @@ $(document).ready(function () {
     var ingredient1 = 'apple'
 
 
+
     function getIngredient() {
-        var requestUrlLocation = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredient1}&appid=${apiKey}`
+        var requestUrlLocation = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredient1}&apiKey=${apiKey}`
 
         fetch(requestUrlLocation)
           .then(function(response) {
@@ -21,3 +22,6 @@ $(document).ready(function () {
 
 
 })
+
+
+d51f94a45dc58fbdd3b8cb1089f227c9
