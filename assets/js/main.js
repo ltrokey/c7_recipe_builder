@@ -13,13 +13,10 @@ $(document).ready(function () {
         if (formInputValue === "Nutrition") {
             
             window.location.assign("./nutrition.html?q=" + userInput) 
-        } else if (formInputValue === "Recipes") {
+        } else (formInputValue === "Recipes") {
             
             window.location.assign("./recipe.html?q=" + userInput) ;
-        } else {
-         
-            alert("Please select a valid option");
-        }
+        } 
     });
 });
 
