@@ -1,12 +1,16 @@
 $(document).ready(function() {
 
     var apiKey ='4f88b4f93e474ca7a15d148f0cc24000'
-    var ingredient1 = 'turkey'
+    userInput = 'turkey, cranberry'
+    var UrlIngredients = userInput.replace(/,/g, ',+')
+
+    console.log(UrlIngredients)
 
 
+      // reminder - make alerts if data not available
 
     function getIngredientRecipe() {
-      var requestUrlIngredient = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredient1}&apiKey=${apiKey}`
+      var requestUrlIngredient = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${UrlIngredients}&apiKey=${apiKey}`
 
       fetch(requestUrlIngredient)
         .then(function(response) {
