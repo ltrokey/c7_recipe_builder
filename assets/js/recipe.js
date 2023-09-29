@@ -3,8 +3,14 @@ $(document).ready(function() {
     var apiKey ='4f88b4f93e474ca7a15d148f0cc24000'
     userInput = 'turkey, cranberry'
     var UrlIngredients = userInput.replace(/,/g, ',+')
-
     console.log(UrlIngredients)
+    function getParams(){
+      var searchParams = document.location.search
+      console.log(searchParams)
+    }
+    getParams()
+
+ 
 
 
       // reminder - make alerts if data not available
@@ -58,5 +64,8 @@ $(document).ready(function() {
       // getRecipeIngredientList()
 
 })
+
+
+
 
 
