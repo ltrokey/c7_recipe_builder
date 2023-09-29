@@ -10,12 +10,12 @@ $(document).ready(function() {
     }
     getParams()
 
- 
+
 
 
       // reminder - make alerts if data not available
 
-    function getIngredientRecipe() {
+    function getIngredientRecipes() {
       var requestUrlIngredient = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${UrlIngredients}&apiKey=${apiKey}`
 
       fetch(requestUrlIngredient)
@@ -36,10 +36,10 @@ $(document).ready(function() {
           getRecipeIngredientList(data[3].id)
         })
     }
-      getIngredientRecipe()
+      getIngredientRecipes()
 
 
-    function getRecipeIngredientList(recipeId) {
+    function getRecipe(recipeId) {
       var requestUrlRecipeIngredients = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`
 
       fetch(requestUrlRecipeIngredients)
@@ -61,7 +61,7 @@ $(document).ready(function() {
         console.log(data.instructions)
       })
     }
-      // getRecipeIngredientList()
+      getRecipe()
 
 })
 

@@ -1,36 +1,29 @@
 $(document).ready(function () {
-    
-    
-    
-    $(".searchBtn").on("click", function(e){
-       e.preventDefault();
-       var userInput=$("#userInput").val().split(", ");
-       console.log(userInput);
-        var formInputValue = $("#format-Input").val();
-        for (var i = 0; i < userInput.length; i++) {
-            
+    $(".searchBtn").on("click", function (e) {
+        e.preventDefault()
+
+        var userInput = $("#userInput").val()
+        var formInputValue = $("#format-Input").val()
+        var userInputArray = userInput.split(", ")
+        if (!userInputArray.length || !formInputValue) {
+            alert("Please enter a search query and select an option.")
+            return
         }
-        if (formInputValue === "Nutrition") {
-            
-            window.location.assign("./nutrition.html?q=" + userInput) 
-        } else (formInputValue === "Recipes") {
-            
-            window.location.assign("./recipe.html?q=" + userInput) ;
-        } 
-    });
-});
+        var queryString = userInputArray.join("+")
+        var redirectUrl
+        var option = formInputValue
 
+        if (option === "Nutrition") {
+            redirectUrl = `./nutrition.html?q=${queryString}&option=${option}`
+        } else if (option === "Recipes") {
+            redirectUrl = `./recipe.html?q=${queryString}&option=${option}`
+        } else {
+            alert("Invalid option selected.")
+            return
+        }
 
-
-
-//function for when "recipe" button is clicked it will send you to the recipe.html page.
-
-
-
-// function redirectRecipes(){
-//     window.open("recipe.html")
-// }
-// //function for when "Nutrient" button is clicked it will send you to nutri.html page.
-// function redirectNutri(){
-//     window.open("nutri.html")
-// }
+        if (redirectUrl) {
+            window.location.assign(redirectUrl)
+        }
+    })
+})
