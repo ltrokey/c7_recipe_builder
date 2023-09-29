@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $(".searchBtn").on("click", function (e) {
         e.preventDefault()
 
@@ -26,4 +27,5 @@ $(document).ready(function () {
             window.location.assign(redirectUrl)
         }
     })
+
 })
