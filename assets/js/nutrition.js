@@ -18,6 +18,23 @@ $(document).ready(function () {
 
   getParams()
 
+      // Recipe Page Search Bar
+      $(".searchBtn").on("click", function (e) {
+        e.preventDefault()
+
+        var userInput = $("#userInput").val()
+        var queryString = userInput.replace(/, /g, ',+')
+        var url = `./nutrition.html?q=${queryString}`
+
+        if (!userInput.length) {
+            alert("Please enter a search query.")
+            return
+        } else {
+            window.location.assign(url)
+
+        }
+    })
+
   function getNutritionCards(urlIngredients) {
     var requestUrlLocation = `https://api.edamam.com/api/food-database/v2/parser?app_id=${apiId}&app_key=${apiKey}&ingr=${urlIngredients}&nutrition-type=cooking`
 

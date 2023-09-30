@@ -9,7 +9,6 @@ $(document).ready(function() {
     function getParams() {
       var searchParams = new URLSearchParams(document.location.search)
       userInput = searchParams.get("q")
-      console.log(userInput)
 
       if (userInput) {
           urlIngredients = userInput.replace(/, /g, ',+')
@@ -18,6 +17,23 @@ $(document).ready(function() {
     }
 
     getParams()
+
+    // Recipe Page Search Bar
+    $(".searchBtn").on("click", function (e) {
+      e.preventDefault()
+
+      var userInput = $("#userInput").val()
+      var queryString = userInput.replace(/, /g, ',+')
+      var url = `./recipe.html?q=${queryString}`
+
+      if (!userInput.length) {
+          alert("Please enter a search query.")
+          return
+      } else {
+          window.location.assign(url)
+
+      }
+  })
 
   // Recipe Preview Cards
     function getIngredientRecipes() {
@@ -181,18 +197,11 @@ $(document).ready(function() {
 
     displayFavoriteRecipes()
 
-
     // Clear Local Storage
-    // $('.clearBtn').on('click', function() {
-    //   localStorage.clear()
-    //   location.reload()
-    // })
-    //   displayLocation()
-
+    $('.clearBtn').on('click', function() {
+      localStorage.clear()
+      location.reload()
+      // add modal to confirm clear history
+    })
 
 })
-
-
-
-
-
