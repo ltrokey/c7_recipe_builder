@@ -12,7 +12,7 @@ $(document).ready(function() {
       console.log(userInput)
 
       if (userInput) {
-          urlIngredients = userInput.replace(/,/g, ',+')
+          urlIngredients = userInput.replace(/, /g, ',+')
           getIngredientRecipes(urlIngredients)
       }
     }

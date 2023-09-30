@@ -5,12 +5,11 @@ $(document).ready(function () {
 
         var userInput = $("#userInput").val()
         var formInputValue = $("#format-Input").val()
-        var userInputArray = userInput.split(", ")
-        if (!userInputArray.length || !formInputValue) {
+        if (!userInput.length || !formInputValue) {
             alert("Please enter a search query and select an option.")
             return
         }
-        var queryString = userInputArray.join("+")
+        var queryString = userInput.replace(/, /g, ',+')
         var redirectUrl
         var option = formInputValue
 
