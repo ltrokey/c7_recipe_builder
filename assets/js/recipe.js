@@ -1,8 +1,9 @@
 $(document).ready(function() {
 
-    var apiKey ='c9503030b0c3421a80e16c30f4f1b65e'
+    var apiKey ='4f88b4f93e474ca7a15d148f0cc24000'
     var userInput = ''
     var urlIngredients = ''
+    var favorites = JSON.parse(localStorage.getItem('savedFavorites')) || []
 
   // User Search Parameters
     function getParams() {
@@ -46,8 +47,8 @@ $(document).ready(function() {
 
             // View Button & Event Row
             var btnRow = $('<div>').addClass('row justify-content-center')
-            var viewBtn = $('<button>').addClass('col-4 m-2 rounded').text("View")
-            addViewBtnEvent(viewBtn, data[i].id, recipeImageUrl, data[i].title)
+            var viewBtn = $('<button>').addClass('col-4 col-md-2 m-2 rounded').text("View")
+            addViewBtnEvent(viewBtn, data[i].id)
 
             btnRow.append(viewBtn)
 
@@ -64,7 +65,7 @@ $(document).ready(function() {
     }
 
     // Recipe Card
-    function getRecipe(recipeId, recipeImageUrl, recipeName) {
+    function getRecipe(recipeId) {
       var requestUrlRecipeIngredients = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`
 
       fetch(requestUrlRecipeIngredients)
@@ -72,6 +73,10 @@ $(document).ready(function() {
           return response.json()
       })
       .then(function(data) {
+
+        var recipeImageUrl = data.image
+        var recipeId = data.id
+        var recipeName = data.title
 
         // Ingredient Details
         var containerDetails = $('<div>').addClass('col-md-6 mt-3')
@@ -88,13 +93,15 @@ $(document).ready(function() {
 
         // Favorite Button
         var favoriteBtn = $('<button>').addClass('col-4 col-md-2 ms-auto m-2 rounded').text("Favorite")
-
+        $(favoriteBtn).on('click', function() {
+          saveFavoriteRecipe(recipeId, recipeName)
+        })
 
         // Ingredient Container
         containerDetails.append(ingredientTitle, ingredientsListEl, ingredientsList)
 
         // Recipe Card Image
-        var recipeImage = $('<img>').addClass('img-fluid col-12 col-md-8').attr('src', recipeImageUrl)
+        var recipeImage = $('<img>').addClass('img-fluid col-12 col-md-6').attr('src', recipeImageUrl)
         var imageColumn = $('<div>').addClass('text-center my-5')
         imageColumn.append(recipeImage)
 
@@ -120,14 +127,60 @@ $(document).ready(function() {
     }
 
     // Add Click Event to View Recipe
-    function addViewBtnEvent(viewBtn, recipeId, recipeImageUrl, recipeName) {
+    function addViewBtnEvent(viewBtn, recipeId) {
       $(viewBtn).on('click', function() {
         $('#recipePreviewContainer').empty()
-        // $('#futureWeatherContainer').empty()
 
-        getRecipe(recipeId, recipeImageUrl, recipeName)
+        getRecipe(recipeId)
       })
     }
+
+    // Saved function for Favorite Recipes
+
+    function saveFavoriteRecipe(recipeId, recipeName) {
+
+      var existingFavorite = favorites.find(function (favorite) {
+        return (favorite.recipeId === recipeId)
+      })
+
+      if (!existingFavorite) {
+          favorites.push({
+            recipeId: recipeId,
+            recipeName: recipeName
+          })
+
+        localStorage.setItem('savedFavorites', JSON.stringify(favorites))
+      }
+      displayFavoriteRecipes()
+    }
+
+    // Click Event to Saved Favorites Buttons
+    function addFavoriteBtnEvent(favoriteBtn, recipeId) {
+      favoriteBtn.on('click', function() {
+        $('#recipePreviewContainer').empty()
+        $('#recipeCard').empty()
+
+        getRecipe(recipeId)
+      });
+    }
+
+    function displayFavoriteRecipes() {
+
+      $('#savedFavorites').empty()
+
+      for (var i = 0; i < favorites.length; i++) {
+        var favoriteBtn = $('<button>').addClass('col-12 m-2 rounded').text(favorites[i].recipeName)
+
+        favoriteBtn.attr('data-recipe-id', favorites[i].recipeId)
+
+        addFavoriteBtnEvent (favoriteBtn, favorites[i].recipeId)
+
+        $('#savedFavorites').append(favoriteBtn);
+      }
+    }
+
+    displayFavoriteRecipes()
+
 
     // Clear Local Storage
     // $('.clearBtn').on('click', function() {
