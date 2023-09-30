@@ -87,7 +87,7 @@ $(document).ready(function() {
         }
 
         // Favorite Button
-        var favoriteBtn = $('<button>').addClass('col-4 ms-auto m-2 rounded').text("Favorite")
+        var favoriteBtn = $('<button>').addClass('col-4 col-md-2 ms-auto m-2 rounded').text("Favorite")
 
 
         // Ingredient Container
@@ -122,7 +122,7 @@ $(document).ready(function() {
     // Add Click Event to View Recipe
     function addViewBtnEvent(viewBtn, recipeId, recipeImageUrl, recipeName) {
       $(viewBtn).on('click', function() {
-        $('#recipeContainer').empty()
+        $('#recipePreviewContainer').empty()
         // $('#futureWeatherContainer').empty()
 
         getRecipe(recipeId, recipeImageUrl, recipeName)
