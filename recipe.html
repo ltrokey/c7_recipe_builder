@@ -13,13 +13,45 @@
 
     <body>
         <header>
-            <h1>Recipes</h1>
 
         </header>
 
-        <main>
-            <button onclick="getRecipe(document.getElementById('search').value)">recipes</button>
+        <main class="min-vh-100 container-fluid">
+            <div class="row">
 
+                <!-- Search Bar & Favorite Section -->
+                <section id="searchContainer" class="col-12 col-md-4">
+
+                    <!-- Search Bar -->
+                    <div class="row">
+                        <input type="text" id="userInput" class="col-9" placeholder="Search for a recipe ingredient(s)">
+                        <button class="searchBtn col-3 rounded" aria-label="search">Search</button>
+
+                        <!-- Favorites -->
+                        <div class="favoriteContainer row mt-3 ">
+                            <h5 class="col-9 mt-3 mb-3">Favorite Recipes</h5>
+                            <button class="clearBtn rounded col-3 mt-3 mb-3">Clear</button>
+                            <div id="savedFavorites"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recipe Section -->
+                <section id="recipeContainer" class="col-12 col-md-8">
+
+                    <!-- Recipes List Preview -->
+                    <div class="row">
+                        <div id="recipePreviewContainer"></div>
+                    </div>
+
+                    <!-- Selected Recipe Card -->
+                    <div id="recipeCardContainer" class="col-12">
+                        <div class="row">
+                            <div id="recipeCard"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
 
         <footer>
