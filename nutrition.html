@@ -11,28 +11,47 @@
         <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
     </head>
 
-    <body>
+    <body class="bodybackground">
         <header>
-            <h1>Nutrients</h1>
+            <img class="background_image" src="./assets/images/15114-superfood-food-bow-diet_food-health-3840x2160.jpg" alt="nutrition_image">
+            <h1> Welcome to your Nutrition World</h1>
         </header>
+        <nav id = " nav_bar">
+            <ul>
+                <li><a href = "#recipes">Recipes</a></li>
+                <li><a href = "#nutrition">Nutrition</a></li>
+                <li><a href = "#home">Home</a></li>
+            </ul>
 
         <main class="min-vh-100 container-fluid">
             <div class="row">
 
                 <!-- Search Bar & Favorite Section -->
                 <section id="searchContainer" class="col-12 col-md-4">
+                    <h2>What's in your pantry</h2>
 
                     <!-- Search Bar -->
                     <div class="row">
-                        <input type="text" id="userInput" class="col-9" placeholder="Search for a recipe ingredient(s)">
+                        <input type="text" id="userInput" class="col-9" placeholder="Search for Nutrition Facts by ingredient(s)">
                         <button class="searchBtn col-3 rounded" aria-label="search">Search</button>
 
-                        <!-- Favorites
-                        <div class="favoriteContainer row mt-3 ">
-                            <h5 class="col-9 mt-3 mb-3">Favorite Recipes</h5>
+                        
+                        <div class="historyContainer row mt-3 ">
+                            <h5 class="col-9 mt-3 mb-3">Search History</h5>
                             <button class="clearBtn rounded col-3 mt-3 mb-3">Clear</button>
-                            <div id="savedFavorites"></div>
-                        </div> -->
+                            <div id="savedHistory"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Nutrition Section -->
+                <section id="nutritionContainer" class="col-12 col-md-8">
+
+                    <!-- Selected Nutrition Card -->
+                    <div id="nutritionCardContainer" class="col-12">
+                        <div class="row">
+                            <div id="nurtitionCard"></div>
+                        </div>
                     </div>
                 </section>
 

@@ -4,26 +4,34 @@
     width: 100%;
     position: relative;
     display: flex;
-    & h1 {
-        position: absolute;
-        top: 75%;
-        right: 20%;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 300%;
-        color: white;
-        text-align: center;
+}
+
+h1 {
+  position:relative; 
+  /* top: 5%; */
+  right: 0%;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 300%;
+  color:black;
+  text-align: center; 
+
+}
+h2{
+
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+
+}
+.bodybackground {
+  background-color:rgb(245, 240, 235)
+}
 
 
-    }
-
-
-} 
 .background_image {
    
     height: 35vh;
     width: 100%;
-
-
+    
 }
 .hero-text {
 

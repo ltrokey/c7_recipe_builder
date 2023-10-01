@@ -4,7 +4,9 @@ $(document).ready(function () {
   var apiId = '6a272aa5'
   var userInput = ''
   var urlIngredients = ''
+  var favorites = JSON.parse(localStorage.getItem('savedFavorites')) || []
 
+  //user Search Parameters
   function getParams() {
     var searchParams = new URLSearchParams(document.location.search)
     userInput = searchParams.get("q")
@@ -44,6 +46,34 @@ $(document).ready(function () {
       })
       .then(function(data) {
         for (var i = 0; i < 10; i++) {
+
+        //Nutrition Card image
+        var nutritionImageUrl = data.hints[i].food.image
+        var nutritionImage = $("<img>").addClass("img-fluid col-12 col-md-6").attr("src", nutritionImageUrl) 
+        var imageCol = $("<div>").addClass('text-center my-5')
+        imageCol.append(nutritionImage)
+
+        //Nutrition Card Title
+        var listTitle = $("<h2>").addClass('text-center').text(data.hints[i].food.label)
+
+        //Nutrition Card Facts 
+        var listCarb = $('<p>').text("Carbohydrate: " + Math.round(data.hints[i].food.nutrients.CHOCDF) + " g")
+        var listEnergy = $('<p>').text("Energy: " + Math.round(data.hints[i].food.nutrients.ENERC_KCAL) + " kcal")
+        var listFat = $('<p>').text("Fat: " + Math.round(data.hints[i].food.nutrients.FAT) + " g")
+        var listFiber = $('<p>').text("Fiber: " + Math.round(data.hints[i].food.nutrients.FIBTG) + " g")
+        var listProtein = $('<p>').text("Protein: " + Math.round(data.hints[i].food.nutrients.PROCNT) + " g")
+    
+        // Details Column 
+
+        var detailsCol = $('<div>').addClass('col-md-6 mt-3')
+        detailsCol.append(listTitle, listCarb, listEnergy, listFat, listFiber, listProtein)
+
+        var container = $('<div>').addClass('row m-3 border border-secondary')
+        container.append(imageCol, detailsCol)
+
+        $('#nurtitionCard').append(container)
+
+
           console.log(data.hints[i])
           // Image
           console.log(data.hints[i].food.image)
@@ -66,3 +96,4 @@ $(document).ready(function () {
     })
   }
 })
+
