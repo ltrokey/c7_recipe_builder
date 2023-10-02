@@ -155,7 +155,7 @@ $(document).ready(function() {
         var recipeInstructions = $('<div>').html(instructionText)
 
         var cardContainer = $('<div>').addClass('row m-3 border border-secondary')
-        cardContainer.append(favoriteBtn,imageColumn, listTitle, containerDetails, instructionTitle, recipeInstructions)
+        cardContainer.append(favoriteBtn, listTitle,imageColumn, containerDetails, instructionTitle, recipeInstructions)
 
         $('#recipeCard').append(cardContainer)
 
