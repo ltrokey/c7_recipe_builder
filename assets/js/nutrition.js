@@ -101,7 +101,7 @@ $(document).ready(function () {
         //Nutrition Card image
         var nutritionImageUrl = data.hints[i].food.image
         var nutritionImage = $("<img>").addClass("img-fluid rounded").attr("src", nutritionImageUrl)
-        var imageCol = $("<div>").addClass('col-md-6 text-left')
+        var imageCol = $("<div>").addClass('col-md-6 text-center py-3')
         imageCol.append(nutritionImage)
 
         //Nutrition Card Facts
@@ -120,23 +120,6 @@ $(document).ready(function () {
 
         $('#nurtitionCard').append(container)
 
-
-
-          console.log(data.hints[i])
-          // Image
-          console.log(data.hints[i].food.image)
-          // Name
-          console.log(data.hints[i].food.label)
-          //Carbohydrate Unit Gram
-          console.log(data.hints[i].food.nutrients.CHOCDF)
-          //Energy Unit Kcal
-          console.log(data.hints[i].food.nutrients.ENERC_KCAL)
-          // Protein Unit Gram
-          console.log(data.hints[i].food.nutrients.PROCNT)
-          // Fat Unit Gram
-          console.log(data.hints[i].food.nutrients.FAT)
-          // Fiber Unit Gram
-          console.log(data.hints[i].food.nutrients.FIBTG)
         }
       })
       .catch(function (error) {
