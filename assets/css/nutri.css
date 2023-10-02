@@ -19,7 +19,20 @@ h1 {
 h2{
 
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  text-align: center;
+  text-align: right;
+  color: bisque;
+
+}
+p{
+  color: bisque;
+  top: 30px;
+
+}
+
+#nurtitionCard {
+
+  background-color: #333;
+  border-radius: 25px;
 
 }
 .bodybackground {
@@ -65,4 +78,5 @@ ul {
   }
   
   .active {
-    background-color: #04AA6D;
+    background-color:bisque;
+  }

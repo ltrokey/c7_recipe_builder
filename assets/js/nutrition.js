@@ -47,11 +47,22 @@ $(document).ready(function () {
       .then(function(data) {
         for (var i = 0; i < 10; i++) {
 
+        // Details Column 
+
+        var detailsCol = $('<div>').addClass('text-center top: 80px; col-md-9')
+        detailsCol.append(listCarb, listEnergy, listFat, listFiber, listProtein)
+
+        var container = $('<div>').addClass('row m-3 border border-radius: 5px')
+        container.append(listTitle, imageCol, detailsCol,)
+
+        $('#nurtitionCard').append(container)
+
+
         //Nutrition Card image
         var nutritionImageUrl = data.hints[i].food.image
-        var nutritionImage = $("<img>").addClass("img-fluid col-12 col-md-6").attr("src", nutritionImageUrl) 
-        var imageCol = $("<div>").addClass('text-center my-5')
-        imageCol.append(nutritionImage)
+        var nutritionImage = $("<img>").addClass("img-fluid col-3 col-md-3").attr("src", nutritionImageUrl) 
+        var imageCol = $("<div>").addClass('text-left border border-light')
+        imageCol.append(nutritionImage,detailsCol)
 
         //Nutrition Card Title
         var listTitle = $("<h2>").addClass('text-center').text(data.hints[i].food.label)
@@ -63,15 +74,7 @@ $(document).ready(function () {
         var listFiber = $('<p>').text("Fiber: " + Math.round(data.hints[i].food.nutrients.FIBTG) + " g")
         var listProtein = $('<p>').text("Protein: " + Math.round(data.hints[i].food.nutrients.PROCNT) + " g")
     
-        // Details Column 
 
-        var detailsCol = $('<div>').addClass('col-md-6 mt-3')
-        detailsCol.append(listTitle, listCarb, listEnergy, listFat, listFiber, listProtein)
-
-        var container = $('<div>').addClass('row m-3 border border-secondary')
-        container.append(imageCol, detailsCol)
-
-        $('#nurtitionCard').append(container)
 
 
           console.log(data.hints[i])
