@@ -101,7 +101,7 @@ $(document).ready(function () {
         //Nutrition Card image
         var nutritionImageUrl = data.hints[i].food.image
         var nutritionImage = $("<img>").addClass("img-fluid rounded").attr("src", nutritionImageUrl)
-        var imageCol = $("<div>").addClass('col-md-6 text-center py-3')
+        var imageCol = $("<div>").addClass('col-md-6 text-center py-3mmit')
         imageCol.append(nutritionImage)
 
         //Nutrition Card Facts
