@@ -4,7 +4,10 @@ $(document).ready(function () {
   var apiId = '6a272aa5'
   var userInput = ''
   var urlIngredients = ''
-  var favorites = JSON.parse(localStorage.getItem('savedFavorites')) || []
+  var facts = JSON.parse(localStorage.getItem('savedFacts')) || []
+
+
+  
 
   //user Search Parameters
   function getParams() {
@@ -17,6 +20,7 @@ $(document).ready(function () {
         getNutritionCards(urlIngredients)
     }
   }
+
 
   getParams()
 
@@ -33,9 +37,62 @@ $(document).ready(function () {
             return
         } else {
             window.location.assign(url)
-
+            savedFacts(userInput)
         }
     })
+
+
+     // Saved function for Favorite Recipes
+
+     function savedFacts(userInput) { 
+      var existingFact = facts.find(function (fact) {
+        return (fact.userInput === userInput)
+      })
+
+      if (!existingFact) {
+          facts.push({
+            userInput: userInput
+          })
+
+        localStorage.setItem('savedFacts', JSON.stringify(facts))
+      }
+      displaySavedFacts()
+    }
+
+    // Click Event to Saved Favorites Buttons
+    function addFactBtnEvent(factBtn, userInput) {
+      factBtn.on('click', function() {
+        $('#nurtitionCard').empty()
+        
+        getNutritionCards(userInput)
+      });
+    }
+
+    function displaySavedFacts() {
+
+      $('#savedFacts').empty()
+
+      for (var i = 0; i < facts.length; i++) {
+        var factBtn = $('<button>').addClass('col-12 m-2 rounded').text(facts[i].userInput)
+
+        factBtn.attr('data-userInput', facts[i].userInput)
+
+        addFactBtnEvent (factBtn, facts[i].userInput)
+
+        $('#savedFacts').append(factBtn);
+      }
+    }
+
+    displaySavedFacts()
+
+    // Clear Local Storage
+    $('.clearBtn').on('click', function() {
+      localStorage.clear()
+      location.reload()
+      // add modal to confirm clear history
+    })
+
+
 
   function getNutritionCards(urlIngredients) {
     var requestUrlLocation = `https://api.edamam.com/api/food-database/v2/parser?app_id=${apiId}&app_key=${apiKey}&ingr=${urlIngredients}&nutrition-type=cooking`
@@ -47,16 +104,8 @@ $(document).ready(function () {
       .then(function(data) {
         for (var i = 0; i < 10; i++) {
 
-        // Details Column 
-
-        var detailsCol = $('<div>').addClass('text-center top: 80px; col-md-9')
-        detailsCol.append(listCarb, listEnergy, listFat, listFiber, listProtein)
-
-        var container = $('<div>').addClass('row m-3 border border-radius: 5px')
-        container.append(listTitle, imageCol, detailsCol,)
-
-        $('#nurtitionCard').append(container)
-
+        //Nutrition Card Title
+        var listTitle = $("<h2>").addClass('text-center').text(data.hints[i].food.label) 
 
         //Nutrition Card image
         var nutritionImageUrl = data.hints[i].food.image
@@ -64,16 +113,21 @@ $(document).ready(function () {
         var imageCol = $("<div>").addClass('text-left border border-light')
         imageCol.append(nutritionImage,detailsCol)
 
-        //Nutrition Card Title
-        var listTitle = $("<h2>").addClass('text-center').text(data.hints[i].food.label)
-
         //Nutrition Card Facts 
         var listCarb = $('<p>').text("Carbohydrate: " + Math.round(data.hints[i].food.nutrients.CHOCDF) + " g")
         var listEnergy = $('<p>').text("Energy: " + Math.round(data.hints[i].food.nutrients.ENERC_KCAL) + " kcal")
         var listFat = $('<p>').text("Fat: " + Math.round(data.hints[i].food.nutrients.FAT) + " g")
         var listFiber = $('<p>').text("Fiber: " + Math.round(data.hints[i].food.nutrients.FIBTG) + " g")
         var listProtein = $('<p>').text("Protein: " + Math.round(data.hints[i].food.nutrients.PROCNT) + " g")
+
+        // Details Column 
+        var detailsCol = $('<div>').addClass('text-center top: 80px; col-md-9')
+        detailsCol.append(listCarb, listEnergy, listFat, listFiber, listProtein)
     
+        var container = $('<div>').addClass('row m-3 border border-radius: 5px')
+        container.append(listTitle, imageCol, detailsCol,)
+
+        $('#nurtitionCard').append(container)
 
 
 

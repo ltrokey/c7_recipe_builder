@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var apiKey ='4f88b4f93e474ca7a15d148f0cc24000'
+    var apiKey ='be47e6c6d3c6419f9c6b84d60fa5460e'
     var userInput = ''
     var urlIngredients = ''
     var favorites = JSON.parse(localStorage.getItem('savedFavorites')) || []
