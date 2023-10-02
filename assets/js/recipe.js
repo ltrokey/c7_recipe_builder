@@ -107,7 +107,7 @@ $(document).ready(function() {
         ingredientsList.push($('<li>').text(ingredient))
         }
 
-        // Favorite Button
+        Favorite Button
         var favoriteBtn = $('<button>').addClass('col-4 col-md-2 ms-auto m-2 rounded').text("Favorite")
         $(favoriteBtn).on('click', function() {
           saveFavoriteRecipe(recipeId, recipeName)
@@ -115,16 +115,22 @@ $(document).ready(function() {
 
         // Ask Eric - Trying to use Icon
         // var svgElement = $('<svg>').attr({
-        //   xmlns: 'http://www.w3.org/2000/svg',
-        //   height: '1em',
-        //   viewBox: '0 0 576 512',
+        //   xmlns: "http://www.w3.org/2000/svg",
+        //   width: "16",
+        //   height: "16",
+        //   fill: "currentColor",
+        //   class: "bi bi-heart-fill",
+        //   viewBox: "0 0 16 16"
         // })
 
-        // var pathElement = $('<path>').attr('d', 'M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z')
+        // var pathElement = $('<path>').attr({
+        //   "fill-rule": "evenodd",
+        //   d: "M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+        // })
 
         // svgElement.append(pathElement)
 
-        // var btnIcon = $('<i>').addClass('fa-solid fa-star')
+        // var btnIcon = $('<i>').addClass('bi bi-heart-fill')
 
         // btnIcon.append(svgElement)
 
@@ -132,9 +138,9 @@ $(document).ready(function() {
 
         // favoriteBtn.append(btnIcon)
 
-        // $(favoriteBtn).on('click', function() {
-        //   saveFavoriteRecipe(recipeId, recipeName)
-        // })
+        $(favoriteBtn).on('click', function() {
+          saveFavoriteRecipe(recipeId, recipeName)
+        })
 
         // Ingredient Container
         containerDetails.append(ingredientTitle, ingredientsListEl, ingredientsList)
@@ -203,7 +209,7 @@ $(document).ready(function() {
         $('#recipeCard').empty()
 
         getRecipe(recipeId)
-      });
+      })
     }
 
     function displayFavoriteRecipes() {
@@ -217,7 +223,7 @@ $(document).ready(function() {
 
         addFavoriteBtnEvent (favoriteBtn, favorites[i].recipeId)
 
-        $('#savedFavorites').append(favoriteBtn);
+        $('#savedFavorites').append(favoriteBtn)
       }
     }
 
