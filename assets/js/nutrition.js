@@ -100,9 +100,9 @@ $(document).ready(function () {
 
         //Nutrition Card image
         var nutritionImageUrl = data.hints[i].food.image
-        var nutritionImage = $("<img>").addClass("img-fluid rounded").attr("src", nutritionImageUrl)
-        var imageCol = $("<div>").addClass('col-md-6 text-left')
-        imageCol.append(nutritionImage)
+        var nutritionImage = $("<img>").addClass("img-fluid col-3 col-md-3").attr("src", nutritionImageUrl)
+        var imageCol = $("<div>").addClass('text-left border border-light')
+        imageCol.append(nutritionImage,detailsCol)
 
         //Nutrition Card Facts
         var listCarb = $('<p>').text("Carbohydrate: " + Math.round(data.hints[i].food.nutrients.CHOCDF) + " g")
@@ -119,24 +119,6 @@ $(document).ready(function () {
         container.append(listTitle, imageCol, detailsCol)
 
         $('#nurtitionCard').append(container)
-
-
-
-          console.log(data.hints[i])
-          // Image
-          console.log(data.hints[i].food.image)
-          // Name
-          console.log(data.hints[i].food.label)
-          //Carbohydrate Unit Gram
-          console.log(data.hints[i].food.nutrients.CHOCDF)
-          //Energy Unit Kcal
-          console.log(data.hints[i].food.nutrients.ENERC_KCAL)
-          // Protein Unit Gram
-          console.log(data.hints[i].food.nutrients.PROCNT)
-          // Fat Unit Gram
-          console.log(data.hints[i].food.nutrients.FAT)
-          // Fiber Unit Gram
-          console.log(data.hints[i].food.nutrients.FIBTG)
         }
       })
       .catch(function (error) {
