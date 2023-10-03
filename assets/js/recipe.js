@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var apiKey ='be47e6c6d3c6419f9c6b84d60fa5460e'
+    var apiKey ='f60949a6c29d46df9f8ba34d2d79ee73'
     var userInput = ''
     var urlIngredients = ''
     var favorites = JSON.parse(localStorage.getItem('savedFavorites')) || []
@@ -27,12 +27,16 @@ $(document).ready(function() {
       var url = `./recipe.html?q=${queryString}`
 
       if (!userInput.length) {
-          alert("Please enter a search query.")
-          return
+        $("#alertModal").modal("show")
       } else {
           window.location.assign(url)
 
       }
+  })
+
+  // Modal Button Close
+  $("#closeModalBtn").on("click", function () {
+    $("#alertModal").modal("hide");
   })
 
   // Recipe Preview Cards
@@ -108,35 +112,10 @@ $(document).ready(function() {
       }
 
       // Favorite Button
-      var favoriteBtn = $('<button>').addClass('col-4 col-md-2 ms-auto m-2 rounded').text("Favorite")
+      var favoriteBtn = $('<button>').addClass('col-4 col-md-2 ms-auto m-2 rounded').text("❤️")
       $(favoriteBtn).on('click', function() {
         saveFavoriteRecipe(recipeId, recipeName)
       })
-
-      // Ask Eric - Trying to use Icon
-      // var svgElement = $('<svg>').attr({
-      //   xmlns: "http://www.w3.org/2000/svg",
-      //   width: "16",
-      //   height: "16",
-      //   fill: "currentColor",
-      //   class: "bi bi-heart-fill",
-      //   viewBox: "0 0 16 16"
-      // })
-
-      // var pathElement = $('<path>').attr({
-      //   "fill-rule": "evenodd",
-      //   d: "M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-      // })
-
-      // svgElement.append(pathElement)
-
-      // var btnIcon = $('<i>').addClass('bi bi-heart-fill')
-
-      // btnIcon.append(svgElement)
-
-      // var favoriteBtn = $('<button>').addClass('col-4 col-md-2 ms-auto m-2')
-
-      favoriteBtn.append(btnIcon)
 
       $(favoriteBtn).on('click', function() {
         saveFavoriteRecipe(recipeId, recipeName)
