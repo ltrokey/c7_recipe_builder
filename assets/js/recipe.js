@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var apiKey ='be47e6c6d3c6419f9c6b84d60fa5460e'
+    var apiKey ='f60949a6c29d46df9f8ba34d2d79ee73'
     var userInput = ''
     var urlIngredients = ''
     var favorites = JSON.parse(localStorage.getItem('savedFavorites')) || []
@@ -27,12 +27,16 @@ $(document).ready(function() {
       var url = `./recipe.html?q=${queryString}`
 
       if (!userInput.length) {
-          alert("Please enter a search query.")
-          return
+        $("#alertModal").modal("show")
       } else {
           window.location.assign(url)
 
       }
+  })
+
+  // Modal Button Close
+  $("#closeModalBtn").on("click", function () {
+    $("#alertModal").modal("hide");
   })
 
   // Recipe Preview Cards
