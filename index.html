@@ -44,7 +44,7 @@
 
             <div class="row justify-content-center my-5">
                 <div class="col-12 col-md-10 col-lg-8">
-                    <form class="card card-sm">
+                    <form id = "searchForm" class="card card-sm">
                         <div class="card-body row no-gutters align-items-center">
                             <div class="col-auto">
                                 <i class="fas fa-search h4 text-body"></i>
@@ -56,12 +56,12 @@
                             </div>
                             <!--end of col-->
                             <div class="col-12 col-md-8 col-sm-4 py-2">
-                                <select class="btn btn-outline-secondary btn-lg btn form-input w-50" id="format-Input" aria-placeholder="Select">
+                                <select value="Recipes" class="btn btn-outline-secondary btn-light btn-lg form-input w-50" id="format-Input" aria-placeholder="Select">
                                     <option value="" disabled selected></option>
                                     <option id="nutritionPage" value="Nutrition">Nutrition</option>
                                     <option id="recipePage" value="Recipes">Recipes</option>
                                 </select>
-                                <button class="btn btn-lg btn-success searchBtn" type="submit">Search</button>
+                                <button class="btn btn-lg searchBtn" type="submit">Search</button>
 
                             </div>
 
