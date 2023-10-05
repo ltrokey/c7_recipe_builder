@@ -26,51 +26,53 @@
             <li class="linkBtns"><a href="#home">Home</a></li>
         </ul>
     </nav>
-    <section class = "Description">
-        <h1>Welcome to What's in Your Pantry? - Your Ultimate Culinary Companion!</h1>
-        <p class = "mainDescription">
-            Are you tired of staring at your pantry wondering what to cook with the ingredients you have on hand?
-            Look no further! What's in Your Pantry? Is your go-to online recipe hub designed to transform your
-            cooking experience. With a simple and intuitive interface, this website empowers you to create delicious
-            meals without the hassle of grocery shopping. 
-        </p>
-    </section>
+
     <main>
-        <section>
-            <img class="background_image" src="./assets/images/bottompantry.jpg" alt="nutrition_image">
-            <div class="container">
-                <br/>
-                <div class="row justify-content-center">
-                                    <div class="col-12 col-md-10 col-lg-8">
-                                        <form class="card card-sm">
-                                            <div class="card-body row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <i class="fas fa-search h4 text-body"></i>
-                                                </div>
-                                                <!--end of col-->
-                                                <div class="col">
-                                                    <input id="userInput" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search. . . (ex: Lemon, Orzo or Beef)">
-                                                    
-                                                </div>
-                                                <!--end of col-->
-                                                <div class="col-auto">
-                                                    <select class="btn btn-outline-secondary btn-lg btn form-input w-50" id="format-Input" aria-placeholder="Select">
-                                                        <option value="" disabled selected></option>
-                                                        <option id="nutritionPage" value="Nutrition">Nutrition</option>
-                                                        <option id="recipePage" value="Recipes">Recipes</option>
-                                                    </select>
-                                                    <button class="btn btn-lg btn-success searchBtn" type="submit">Search</button>
-                                                    
-                                                </div>
-                                                
-                                              
-                                            </div>
-                                         
-                                        </form>
-                                    </div>
-                                    <!--end of col-->
-                                </div>
+        <section class = "Description">
+            <div>
+                <div>
+                    <h1>Welcome to What's in Your Pantry?</h1>
+                    <h2>- Your Ultimate Culinary Companion!</h2>
+                    <div class = "mainDescription">
+                        <p> Are you tired of staring at your pantry wondering what to cook with the ingredients you have on hand? Look no further! What's in Your Pantry? Is your go-to online recipe hub designed to transform your cooking experience. With a simple and intuitive interface, this website empowers you to create delicious meals without the hassle of grocery shopping.</p>
+                    </div>
+                </div>
             </div>
+
+        </section>
+        <section>
+
+            <div class="row justify-content-center my-5">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <form class="card card-sm">
+                        <div class="card-body row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <i class="fas fa-search h4 text-body"></i>
+                            </div>
+                            <!--end of col-->
+                            <div class="col">
+                                <input id="userInput" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search. . . (ex: Lemon, Orzo or Beef)">
+
+                            </div>
+                            <!--end of col-->
+                            <div class="col-12 col-md-8 col-sm-4 py-2">
+                                <select class="btn btn-outline-secondary btn-lg btn form-input w-50" id="format-Input" aria-placeholder="Select">
+                                    <option value="" disabled selected></option>
+                                    <option id="nutritionPage" value="Nutrition">Nutrition</option>
+                                    <option id="recipePage" value="Recipes">Recipes</option>
+                                </select>
+                                <button class="btn btn-lg btn-success searchBtn" type="submit">Search</button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+                    <!--end of col-->
+            </div>
+            <img class="background_image" src="./assets/images/bottompantry.jpg" alt="nutrition_image">
+
             <!-- <div class="searchStyle col-12 col-md-9 flex-column align-center p-5">
                 <h2 class = "pantryWriting">What's in your pantry?</h2>
                 <form class="form w-50 ">
@@ -80,14 +82,14 @@
                         <option id="nutritionPage" value="Nutrition">Nutrition</option>
                         <option id="recipePage" value="Recipes">Recipes</option>
                     </select>
-                
+
                 </form>
                 <button class="btn searchBtn">Search</button>
             </div> -->
         </section>
     </main>
 
-    <footer>
+    <footer class="my-3 py-2">
         <h3>Made with Love!</h3>
 
     </footer>
