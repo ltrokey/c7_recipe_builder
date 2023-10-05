@@ -5,10 +5,25 @@ $(document).ready(function () {
 
         var userInput = $("#userInput").val()
         var formInputValue = $("#format-Input").val()
-        if (!userInput.length || !formInputValue) {
-            alert("Please enter a search query and select an option.")
+
+        if (!userInput.length && !formInputValue) {
+            $('#errorMessage').text('Invalid - Must enter an ingredient and select an option.')
+            $('#alertModal').modal("show")
             return
         }
+
+        if (!userInput.length) {
+            $('#errorMessage').text('Invalid - Must enter an ingredient.')
+            $('#alertModal').modal("show")
+            return
+        }
+
+        if (!formInputValue) {
+            $('#errorMessage').text('Invalid - Must select an option from the drop-down menu.')
+            $('#alertModal').modal("show")
+            return
+        }
+
         var queryString = userInput.replace(/, /g, ',+')
         var redirectUrl
         var option = formInputValue
@@ -18,7 +33,8 @@ $(document).ready(function () {
         } else if (option === "Recipes") {
             redirectUrl = `./recipe.html?q=${queryString}&option=${option}`
         } else {
-            alert("Invalid option selected.")
+            $('#errorMessage').text('Invalid option selected')
+            $('#alertModal').modal("show")
             return
         }
 
@@ -27,34 +43,8 @@ $(document).ready(function () {
         }
     })
 
-    $('#searchForm').on('keypress', function (event) {
-        if (event.key === 'Enter') {
-
-            event.preventDefault()
-
-            var userInput = $("#userInput").val()
-            var formInputValue = $("#format-Input").val()
-            if (!userInput.length || !formInputValue) {
-                alert("Please enter a search query and select an option.")
-                return
-            }
-            var queryString = userInput.replace(/, /g, ',+')
-            var redirectUrl
-            var option = formInputValue
-
-            if (option === "Nutrition") {
-                redirectUrl = `./nutrition.html?q=${queryString}&option=${option}`
-            } else if (option === "Recipes") {
-                redirectUrl = `./recipe.html?q=${queryString}&option=${option}`
-            } else {
-                alert("Invalid option selected.")
-                return
-            }
-
-            if (redirectUrl) {
-                window.location.assign(redirectUrl)
-            }
-        }
-
+      // Modal Button Close
+    $("#closeModalBtn").on("click", function () {
+        $("#alertModal").modal("hide")
     })
 })
