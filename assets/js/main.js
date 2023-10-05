@@ -47,5 +47,4 @@ $(document).ready(function () {
     $("#closeModalBtn").on("click", function () {
         $("#alertModal").modal("hide")
     })
-
 })
