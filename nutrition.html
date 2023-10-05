@@ -61,6 +61,26 @@
 
         </footer>
 
+        <!-- Modal Alert -->
+        <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="Alert Modal Title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="alertModalTitle">Error - Invalid Request</h5>
+                </div>
+                <div class="modal-body">
+                  <p id="errorMessage"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="closeModalBtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="./assets/js/nutrition.js"></script>
     </body>
