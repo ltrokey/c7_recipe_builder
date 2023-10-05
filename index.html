@@ -30,73 +30,58 @@
     <main>
         <section class = "Description">
             <div>
-                <div>
-                    <h1>Welcome to What's in Your Pantry?</h1>
-                    <h2>- Your Ultimate Culinary Companion!</h2>
-                    <div class = "mainDescription">
-                        <p> Are you tired of staring at your pantry wondering what to cook with the ingredients you have on hand? Look no further! What's in Your Pantry? Is your go-to online recipe hub designed to transform your cooking experience. With a simple and intuitive interface, this website empowers you to create delicious meals without the hassle of grocery shopping.</p>
-                    </div>
+                <h1>Welcome to What's in Your Pantry?</h1>
+                <h2>- Your Ultimate Culinary Companion!</h2>
+                <div class = "mainDescription">
+                    <p> Are you tired of staring at your pantry wondering what to cook with the ingredients you have on hand? Look no further! What's in Your Pantry? Is your go-to online recipe hub designed to transform your cooking experience. With a simple and intuitive interface, this website empowers you to create delicious meals without the hassle of grocery shopping.</p>
                 </div>
             </div>
-
         </section>
+
         <section>
-
             <div class="row justify-content-center my-5">
-                <div class="col-12 col-md-10 col-lg-8">
-                    <form class="card card-sm">
-                        <div class="card-body row no-gutters align-items-center">
-                            <div class="col-auto">
-                                <i class="fas fa-search h4 text-body"></i>
-                            </div>
-                            <!--end of col-->
-                            <div class="col">
-                                <input id="userInput" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search. . . (ex: Lemon, Orzo or Beef)">
-
-                            </div>
-                            <!--end of col-->
-                            <div class="col-12 col-md-8 col-sm-4 py-2">
-                                <select class="btn btn-outline-secondary btn-lg btn form-input w-50" id="format-Input" aria-placeholder="Select">
-                                    <option value="" disabled selected></option>
-                                    <option id="nutritionPage" value="Nutrition">Nutrition</option>
-                                    <option id="recipePage" value="Recipes">Recipes</option>
-                                </select>
-                                <button class="btn btn-lg btn-success searchBtn" type="submit">Search</button>
-
-                            </div>
-
-                        </div>
-
-                    </form>
-                </div>
-                    <!--end of col-->
+                <form class="col-12 col-md-10 col-lg-8 card" style="background-color:#ff894c;">
+                    <div class="card-body d-flex align-items-center" style="background-color:#ff894c;" >
+                        <input id="userInput" class="form-control form-control-lg form-control-borderless flex-grow-1" type="search" placeholder="Search. . . (ex: Lemon, Orzo or Beef)">
+                        <select class="btn btn-outline-secondary btn-lg btn form-input" style="background-color:#f8f8f8; color:#363636;" id="format-Input" aria-placeholder="Select">
+                            <option value="" disabled selected></option>
+                            <option id="nutritionPage" value="Nutrition">Nutrition</option>
+                            <option id="recipePage" value="Recipes">Recipes</option>
+                        </select>
+                        <button class="btn btn-lg searchBtn" style="background-color:#dc2f2f;" type="submit">
+                            <i class="fas fa-search text-light"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
             <img class="background_image" src="./assets/images/bottompantry.jpg" alt="nutrition_image">
-
-            <!-- <div class="searchStyle col-12 col-md-9 flex-column align-center p-5">
-                <h2 class = "pantryWriting">What's in your pantry?</h2>
-                <form class="form w-50 ">
-                    <input id="userInput" class="form-input w-50" type="text" placeholder="search... (example: apple, beef, carrots)">
-                    <select class="form-input w-50" id="format-Input">
-                        <option value="" disabled selected></option>
-                        <option id="nutritionPage" value="Nutrition">Nutrition</option>
-                        <option id="recipePage" value="Recipes">Recipes</option>
-                    </select>
-
-                </form>
-                <button class="btn searchBtn">Search</button>
-            </div> -->
         </section>
     </main>
 
     <footer class="my-3 py-2">
         <h3>Made with Love!</h3>
-
     </footer>
 
+        <!-- Modal Alert -->
+    <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="Alert Modal Title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="alertModalTitle">Error - Invalid Request</h5>
+            </div>
+            <div class="modal-body">
+                <p id="errorMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="closeModalBtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
-        integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 
