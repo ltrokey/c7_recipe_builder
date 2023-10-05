@@ -57,6 +57,8 @@ We created "What's in Your Pantry?" with a simple but powerful motivation, to ma
 
 [Timothy Ehli](https://github.com/Saosyn)
 
+[Lacey Trokey](https://github.com/ltrokey)
+
 ## License
 
 MIT License
