@@ -33,6 +33,7 @@
 
 #head-intro {
     background-color: var(--lightBrwn);
+    margin-top: 1vh;
     position:relative; 
     top: 1%;
     right: 0%;
@@ -40,6 +41,7 @@
     color:black;
     text-align: center; 
     margin-bottom: 2vh;
+    padding: 1vh;
 } 
 
 #nav_bar {
@@ -53,7 +55,7 @@
 .searchBtn {
     position: relative;
     left: 2%;
-    background-color: #352903;
+    background-color: var(--tomatoRed);
     color: var(--offWhite);
     
 }
@@ -65,7 +67,7 @@
 
 .clearBtn {
     position: relative;
-    background-color: var(--drkBrwn);
+    background-color: var(--tomatoRed);
     color: var(--offWhite);
 
 }
@@ -80,7 +82,7 @@ ul {
     margin: 0;
     /* padding: 0; */
     overflow: hidden;
-    background-color: var(--tomatoRed);
+    background-color: var(--drkBrwn);
   }
   
   li {
@@ -101,7 +103,7 @@ ul {
   }
   
   .active {
-    background-color:rgb(14, 160, 75);
+    background-color:#f8f8f8;
   }
 
 .favoriteContainer {
@@ -111,4 +113,17 @@ ul {
 .viewBtn {
     background-color: #352903;
     color: antiquewhite;
+}
+
+.footer {
+    background-color: rgb(228, 190, 88);
+    text-align: center;
+}
+
+.glass {
+    padding-top: 4px;
+}
+
+#rcpBord {
+    border: dotted;
 }
