@@ -18,7 +18,10 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
   </head>
 
@@ -30,11 +33,18 @@
           src="Images/food-4k.jpg"
           alt="Veggie cabob, grilled salmon, corn on the cob, meat cabob"
         />
-        <h1>Find Your Recipe</h1>
+        <h1 id="head-intro">Find Your Recipe</h1>
       </div>
     </header>
+    <nav id="nav_bar">
+      <ul>
+        <li><a href="#recipes">Recipes</a></li>
+        <li><a href="#nutrition">Nutrition</a></li>
+        <li><a href="#home">Home</a></li>
+      </ul>
+    </nav>
     <main class="min-vh-100 container-fluid">
-      <div class="row">
+      <div class="row mx-2">
         <!-- Search Bar & Favorite Section -->
         <section id="searchContainer" class="col-12 col-md-4">
           <!-- Search Bar -->
@@ -75,30 +85,43 @@
       </div>
     </main>
 
-        <!-- Modal Alert -->
-        <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="Alert Modal Title" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="alertModalTitle">Error - Invalid Request</h5>
-                </div>
-                <div class="modal-body">
-                  Please enter a search query. (Example: apple or pork, apple)
-                </div>
-                <div class="modal-footer">
-                  <button type="button" id="closeModalBtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
+    <!-- Modal Alert -->
+    <div
+      class="modal fade"
+      id="alertModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="Alert Modal Title"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="alertModalTitle">
+              Error - Invalid Request
+            </h5>
+          </div>
+          <div class="modal-body">
+            Please enter a search query. (Example: apple, pork, apple, etc.)
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="closeModalBtn"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
         </div>
+      </div>
+    </div>
 
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="./assets/js/recipe.js"></script>
-    </body>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./assets/js/recipe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./assets/js/recipe.js"></script>
   </body>

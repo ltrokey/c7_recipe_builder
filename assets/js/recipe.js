@@ -18,9 +18,17 @@ $(document).ready(function() {
 
     getParams()
 
+    
+
     // Recipe Page Search Bar
     $(".searchBtn").on("click", function (e) {
-      e.preventDefault()
+      e.preventDefault();
+
+    // $(".searchBtn").keyup(function(e) {
+    //   if (e.keycode == 13) {
+    //     e.preventDefault();
+    //   }
+    // })
 
       var userInput = $("#userInput").val()
       var queryString = userInput.replace(/, /g, ',+')
@@ -69,6 +77,7 @@ $(document).ready(function() {
             var btnRow = $('<div>').addClass('row justify-content-center')
             var viewBtn = $('<button>').addClass('col-4 col-md-2 m-2 rounded').text("View")
             addViewBtnEvent(viewBtn, data[i].id)
+            // $("viewBtn").css({"background-color": "#352903", "color": "antiquewhite", "font-family": "'philosopher', sans-serif"});
 
             btnRow.append(viewBtn)
 
