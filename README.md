@@ -42,11 +42,11 @@ We created "What's in Your Pantry?" with a simple but powerful motivation, to ma
 ![Recipe Preview Page](assets/images/screenshot%20_3_recipe_card.png)
 
 **Exploring Nutrition Information**
-1. Use the search bar on the home page and select `Nutriction` from the drop-down menu or use the search bar on the recipe page.
+1. Use the search bar on the home page and select `Nutrition` from the drop-down menu or use the search bar on the recipe page.
 2. `Click` the `Search` icon and a new page will open, displaying up to 10 nutrition cards with images, ingredient names, and nutritional facts.
 3. On the nutrition page, your search history will be saved to local storage, and you can access it under the search bar in the `Search History` section as buttons titled with the search ingredient name.
 
-![Nutriction Page](assets/images/screenshot_4_nutriction_page.png)
+![Nutrition Page](assets/images/screenshot_4_nutrition_page.png)
 
 **Clearing Local Storage**
 
