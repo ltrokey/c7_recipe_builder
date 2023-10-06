@@ -48,11 +48,21 @@
 
 
 .Description {
-  width: 100vw;
-  height: auto;
-  padding: 1%;
-  text-align: center;
-  background-color: #ff894C;
+    width:100vw;
+    height:auto;
+    padding: 1%;
+    text-align: center;
+    background-color: #ff894C;
+    & h1 {
+      color: antiquewhite;
+    }
+    & h2 {
+      padding-bottom: 1%;
+      color:#dc2f2f;
+    }
+    & p {
+      font-size:medium;
+    }
 
   & h1 {
 

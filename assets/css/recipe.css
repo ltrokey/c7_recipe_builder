@@ -5,6 +5,13 @@
     --cornYllw: #e2cc08;
     --offWhite: rgba(250, 235, 215, 0.925);
     --tomatoRed: #cc2020;
+    --char: #363636;
+    --aprOrange: #CF5C36;
+    --tangOrange: #ff894C;
+    --redDel: #dc2f2f;
+    --eggWhite: #f8f8f8;
+
+
 }
  
  * {
@@ -32,20 +39,31 @@
 }
 
 #head-intro {
-    background-color: var(--lightBrwn);
+    background-color: var(--tangOrange);
     margin-top: 1vh;
     position:relative; 
     top: 1%;
     right: 0%;
     font-size: 300%;
-    color:black;
+    color: var(--eggWhite);
     text-align: center; 
     margin-bottom: 2vh;
     padding: 1vh;
 } 
 
 #nav_bar {
-
+    & li a {
+        display: block;
+        color: var(--offWhite);
+        text-align: center;
+        padding: 15px 16px;
+        text-decoration: none;
+        float: right;
+        &&:hover {
+            color: var(--aprOrange);
+            transition: all 0.3s ease-in-out;
+        }
+      }
 }
 
 #searchContainer {
@@ -55,26 +73,24 @@
 .searchBtn {
     position: relative;
     left: 2%;
-    background-color: var(--tomatoRed);
-    color: var(--offWhite);
-    
-}
-
-.searchBtn:hover {
-    background-color: var(--lightBrwn);
-    color: var(--cornYllw);
+    background-color: darkred;
+    color: var(--eggWhite);
+    &&:hover {
+        background-color: var(--tangOrange);
+        color: var(--eggWhite);
+        transition: all 0.3s ease-in-out;
+    }
 }
 
 .clearBtn {
     position: relative;
-    background-color: var(--tomatoRed);
-    color: var(--offWhite);
-
-}
-
-.clearBtn:hover {
-    background-color: #a07d0c;
-    color: #e2cc08;
+    background-color: darkred;
+    color: var(--eggWhite);
+    &&:hover {
+        background-color: var(--tangOrange);
+        color: var(--eggWhite);
+        transition: all 0.3s ease-in-out;
+    }
 }
 
 ul {
@@ -82,24 +98,7 @@ ul {
     margin: 0;
     /* padding: 0; */
     overflow: hidden;
-    background-color: var(--drkBrwn);
-  }
-  
-  li {
-    float: Right;
-  }
-  
-  li a {
-    display: block;
-    color: var(--offWhite);
-    text-align: center;
-    padding: 15px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover:not(.active) {
-    background-color: var(--lightBrwn);
-    color: var(--cornYllw);
+    background-color: var(--char);
   }
   
   .active {
@@ -116,14 +115,11 @@ ul {
 }
 
 .footer {
-    background-color: rgb(228, 190, 88);
+    background-color: var(--char);
     text-align: center;
+    color: var(--offWhite);
 }
 
 .glass {
     padding-top: 4px;
-}
-
-#rcpBord {
-    border: dotted;
 }

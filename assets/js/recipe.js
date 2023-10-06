@@ -18,21 +18,6 @@ $(document).ready(function () {
   getParams();
 
   // Recipe Page Search Bar
-  // $(".searchBtn").on("click", function (e) {
-  //   e.preventDefault();
-
-  //   var userInput = $("#userInput").val();
-  //   var queryString = userInput.replace(/, /g, ",+");
-  //   var url = `./recipe.html?q=${queryString}`;
-
-  //   if (!userInput.length) {
-  //     $("#alertModal").modal("show");
-  //   } else {
-  //     window.location.assign(url);
-  //   }
-  // });
-
-  // Recipe Page Search Bar
   $(".searchBtn").on("click", function (e) {
     e.preventDefault();
     var userInput = $("#userInput").val();
@@ -93,7 +78,7 @@ $(document).ready(function () {
             // View Button & Event Row
             var btnRow = $("<div>").addClass("row justify-content-center");
             var viewBtn = $("<button>")
-              .addClass("bg-warning col-4 col-md-2 m-2 rounded")
+              .addClass("bg-warning col-4 col-md-2 m-2 rounded hover")
               .text("View");
             addViewBtnEvent(viewBtn, data[i].id);
             // $("viewBtn").css({"background-color": "#352903", "color": "antiquewhite", "font-family": "'philosopher', sans-serif"});
@@ -106,7 +91,9 @@ $(document).ready(function () {
             );
             container.append(imageColumn, detailsColumn, btnRow);
 
-            $("#recipePreviewContainer").append(container);
+            $("#recipePreviewContainer")
+              .append(container)
+              .addClass("text-secondary");
           }
         }
       })
