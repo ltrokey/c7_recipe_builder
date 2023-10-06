@@ -35,34 +35,38 @@
 
 .searchBtn {
   border-radius: 8px;
-  margin:10px;
+  margin: 10px;
   background-color: #dc2f2f !important;
-  color:#f8f8f8;
+  color: #f8f8f8;
+
   &&:hover {
     background-color: #f8f8f8;
-    color:#f8f8f8;
+    color: #f8f8f8;
     transition: all 0.3s ease-in-out;
-    }
+  }
 }
 
 
 
 .Description {
-    width:100vw;
-    height:auto;
-    padding: 1%;
-    text-align: center;
-    background-color: #ff894C;
-    & h1 {
-      color: antiquewhite;
-    }
-    & h2 {
-      padding-bottom: 1%;
-      color:#dc2f2f;
-    }
-    & p {
-      font-size:medium;
-    }
+  width: 100vw;
+  height: auto;
+  padding: 1%;
+  text-align: center;
+  background-color: #ff894C;
+
+  & h1 {
+    color: antiquewhite;
+  }
+
+  & h2 {
+    padding-bottom: 1%;
+    color: #dc2f2f;
+  }
+
+  & p {
+    font-size: medium;
+  }
 
   & h1 {
 
@@ -79,7 +83,7 @@
   & p {
 
     font-size: large;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 
 }

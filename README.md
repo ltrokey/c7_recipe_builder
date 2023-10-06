@@ -107,12 +107,10 @@ SOFTWARE.
 
 9. **Invalid Entry Handling:** Display a modal prompt message when users enter invalid search queries to provide guidance.
 
-10. **Event Handler for Missing Nutrition Card Images:** Implement an event handler to gracefully handle missing images on nutrition cards, ensuring a smooth user experience even when images are unavailable.
+10. **Event Handler for Missing Recipe Instructions:** Create an event handler to manage missing instructions on recipe cards, offering user-friendly notifications and guidance.
 
-11. **Event Handler for Missing Recipe Instructions:** Create an event handler to manage missing instructions on recipe cards, offering user-friendly notifications and guidance.
+11. **Mobile Responsiveness:** Ensure that the application's layout and cards adapt to mobile devices for a seamless user experience on all screens.
 
-12. **Mobile Responsiveness:** Ensure that the application's layout and cards adapt to mobile devices for a seamless user experience on all screens.
-
-13. **Clear Local Storage:** Provide a "clear" button on the nutrition and recipe pages to allow users to remove saved data from local storage.
+12. **Clear Local Storage:** Provide a "clear" button on the nutrition and recipe pages to allow users to remove saved data from local storage.
 
 
