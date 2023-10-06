@@ -41,7 +41,6 @@
     text-align: center;
     background-color: #ff894C;
     & h1 {
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
       color: antiquewhite;
     }
     & h2 {
@@ -49,7 +48,6 @@
       color:#dc2f2f;
     }
     & p {
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
       font-size:medium;
     }
 
