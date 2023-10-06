@@ -1,4 +1,13 @@
 
+:root {
+  
+  --green: rgb(42, 145, 42);
+  --dark: #333; 
+
+}
+
+
+
 .header_container {
 
     width: 100%;
@@ -8,7 +17,6 @@
 
 h1 {
   position:relative;
-  /* top: 5%; */
   right: 0%;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 300%;
@@ -21,23 +29,23 @@ h2{
 
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align: right;
-  color: bisque;
+  color: rgb(10, 10, 10);
 
 }
 p{
-  color: bisque;
+  color: rgb(7, 7, 6);
   top: 30px;
 
 }
 
 #nurtitionCard {
 
-  background-color: #333;
+  background-color: white; 
   border-radius: 25px;
 
 }
 .bodybackground {
-  background-color:rgb(245, 240, 235)
+  background-color:white 
 }
 
 
@@ -68,16 +76,36 @@ ul {
 
   li a {
     display: block;
-    color: white;
+    color:bisque;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
 
   li a:hover:not(.active) {
-    background-color: #111;
+    color: greenyellow;
   }
 
   .active {
-    background-color:bisque;
+    background-color:rgb(143, 19, 10);
+  }
+
+  .searchBtn {
+    position: relative;
+    left: 2%;
+    background-color: #333; 
+    color:bisque;
+    &&:hover {
+        background-color: var(--green);
+        color: var(--dark);
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+  #footer {
+    width: 100%;
+    height: 55px;
+    background-color: #363636;
+    color: white;
+    text-align: center;
   }

@@ -6,6 +6,7 @@ $(document).ready(function () {
   var urlIngredients = ''
   var facts = JSON.parse(localStorage.getItem('savedFacts')) || []
 
+
   //user Search Parameters
   function getParams() {
     var searchParams = new URLSearchParams(document.location.search)
@@ -29,12 +30,17 @@ $(document).ready(function () {
     var url = `./nutrition.html?q=${queryString}`
 
     if (!userInput.length) {
-        alert("Please enter a search query.")
+        $("#errorMessage").text('Please enter a search query. (Example: apple or pork, apple)')
+        $('#alertModal').modal("show")
         return
     } else {
         window.location.assign(url)
         savedFacts(userInput)
     }
+  })
+  // Modal Button Close
+  $("#closeModalBtn").on("click", function () {
+    $("#alertModal").modal("hide");
   })
 
     // Saved function for Facts
@@ -82,7 +88,6 @@ $(document).ready(function () {
   $('.clearBtn').on('click', function() {
     localStorage.clear()
     location.reload()
-    // add modal to confirm clear history
   })
 
   function getNutritionCards(urlIngredients) {
