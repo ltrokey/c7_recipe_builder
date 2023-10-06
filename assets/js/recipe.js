@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var apiKey = "c0568fffc20647c09849d76ed0f5b660";
+  var apiKey = "f60949a6c29d46df9f8ba34d2d79ee73";
   var userInput = "";
   var urlIngredients = "";
   var favorites = JSON.parse(localStorage.getItem("savedFavorites")) || [];
