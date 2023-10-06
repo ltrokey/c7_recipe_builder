@@ -10,8 +10,6 @@
     --tangOrange: #ff894C;
     --redDel: #dc2f2f;
     --eggWhite: #f8f8f8;
-
-
 }
  
  * {
@@ -66,10 +64,6 @@
       }
 }
 
-#searchContainer {
-    
-}
-
 .searchBtn {
     position: relative;
     left: 2%;
@@ -104,15 +98,6 @@ ul {
   .active {
     background-color:#f8f8f8;
   }
-
-.favoriteContainer {
-    
-}
-
-.viewBtn {
-    background-color: #352903;
-    color: antiquewhite;
-}
 
 .footer {
     background-color: var(--char);
