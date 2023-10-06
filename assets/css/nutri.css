@@ -1,4 +1,13 @@
 
+:root {
+  
+  --green: rgb(42, 145, 42);
+  --dark: #333; 
+
+}
+
+
+
 .header_container {
 
     width: 100%;
@@ -31,7 +40,7 @@ p{
 
 #nurtitionCard {
 
-  background-color:rgb(5, 5, 5)
+  background-color: white; 
   border-radius: 25px;
 
 }
@@ -80,6 +89,18 @@ ul {
   .active {
     background-color:rgb(143, 19, 10);
   }
+
+  .searchBtn {
+    position: relative;
+    left: 2%;
+    background-color: #333; 
+    color:bisque;
+    &&:hover {
+        background-color: var(--green);
+        color: var(--dark);
+        transition: all 0.3s ease-in-out;
+    }
+}
 
   #footer {
     width: 100%;
