@@ -1,6 +1,6 @@
 # What's in your Pantry?
 
-[Link to live deploy](add url here)
+[Link to live deploy](https://ltrokey.github.io/c7_recipe_builder/index.html)
 
 ## Description
 
@@ -22,6 +22,8 @@ We created "What's in Your Pantry?" with a simple but powerful motivation, to ma
 2. Next to the search bar, there is a drop-down menu where you can select either `Nutrition` or `Recipes`.
 3. After selecting an option, `click` the `Search` icon.
 
+![Home Page](assets/images/screenshot_1_home%20_page.png)
+
 **Navigation Bar**
 1. When you visit any of the pages (`Home`, `Recipe`, or `Nutrition`), you will find a navigation bar at the top.
 2. `Click` on any of these navigation links and be redirected to the corresponding page based on your selection.
@@ -31,21 +33,31 @@ We created "What's in Your Pantry?" with a simple but powerful motivation, to ma
 2. `Click` the `Search` icon and a new page will open, displaying 10 recipe preview cards with images, names, recipe IDs, and the number of likes.
 3. `Click` the `View` button on a recipe card, you'll see the full recipe with an image, title, ingredients with measurements, and step-by-step instructions.
 
+![Recipe Page](assets/images/screenshot_2_recipe_page.png)
+
 **Saving Favorite Recipes**
 1. Each recipe card has a `Favorite` heart-shaped icon, `click` the `Favorite` icon to save your recipe to local storage.
 2. On the recipe page, your `Favorite` recipe under the search bar in the `Favorite Recipes` section, and you can access it by `clicking` the recipe titled buttons.
 
+![Recipe Preview Page](assets/images/screenshot%20_3_recipe_card.png)
+
 **Exploring Nutrition Information**
-1. Use the search bar on the home page and select `Nutriction` from the drop-down menu or use the search bar on the recipe page.
+1. Use the search bar on the home page and select `Nutrition` from the drop-down menu or use the search bar on the recipe page.
 2. `Click` the `Search` icon and a new page will open, displaying up to 10 nutrition cards with images, ingredient names, and nutritional facts.
 3. On the nutrition page, your search history will be saved to local storage, and you can access it under the search bar in the `Search History` section as buttons titled with the search ingredient name.
+
+![Nutrition Page](assets/images/screenshot_4_nutrition_page.png)
 
 **Clearing Local Storage**
 
 1. When you visit the nutrition or recipe page, you will see a `Clear` button.
 2. `Click` the `clear` button to empty the local storage for that specific page.
 
-![alt text](assets/images/screenshot.png)
+![Mobile Recipe Preview Page](assets/images/screenshot_5_mobile_recipe_page.png)
+
+![Mobile Recipe Card](assets/images/screenshot_6_mobile_recipe_card.png)
+
+![Mobile Recipe Card - Error](assets/images/screenshot_7_mobile_error.png)
 
 ## Credits
 
@@ -107,12 +119,10 @@ SOFTWARE.
 
 9. **Invalid Entry Handling:** Display a modal prompt message when users enter invalid search queries to provide guidance.
 
-10. **Event Handler for Missing Nutrition Card Images:** Implement an event handler to gracefully handle missing images on nutrition cards, ensuring a smooth user experience even when images are unavailable.
+10. **Event Handler for Missing Recipe Instructions:** Create an event handler to manage missing instructions on recipe cards, offering user-friendly notifications and guidance.
 
-11. **Event Handler for Missing Recipe Instructions:** Create an event handler to manage missing instructions on recipe cards, offering user-friendly notifications and guidance.
+11. **Mobile Responsiveness:** Ensure that the application's layout and cards adapt to mobile devices for a seamless user experience on all screens.
 
-12. **Mobile Responsiveness:** Ensure that the application's layout and cards adapt to mobile devices for a seamless user experience on all screens.
-
-13. **Clear Local Storage:** Provide a "clear" button on the nutrition and recipe pages to allow users to remove saved data from local storage.
+12. **Clear Local Storage:** Provide a "clear" button on the nutrition and recipe pages to allow users to remove saved data from local storage.
 
 
