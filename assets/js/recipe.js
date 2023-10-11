@@ -81,7 +81,6 @@ $(document).ready(function () {
               .addClass("bg-warning col-4 col-md-2 m-2 rounded hover")
               .text("View");
             addViewBtnEvent(viewBtn, data[i].id);
-            // $("viewBtn").css({"background-color": "#352903", "color": "antiquewhite", "font-family": "'philosopher', sans-serif"});
 
             btnRow.append(viewBtn);
 

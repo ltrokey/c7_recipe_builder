@@ -43,7 +43,7 @@ $(document).ready(function () {
         }
     })
 
-      // Modal Button Close
+    // Modal Button Close
     $("#closeModalBtn").on("click", function () {
         $("#alertModal").modal("hide")
     })

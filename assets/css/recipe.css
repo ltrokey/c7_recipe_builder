@@ -11,8 +11,8 @@
     --redDel: #dc2f2f;
     --eggWhite: #f8f8f8;
 }
- 
- * {
+
+* {
     font-family: var(--font)
 }
 
@@ -20,13 +20,15 @@
     width: 100%;
     position: relative;
     display: flex;
+
     & h1 {
         position: absolute;
         top: 25%;
         right: 40%;
         color: aliceblue;
-    }   
+    }
 }
+
 .background-image {
     max-width: 100%;
     max-height: 50vh;
@@ -39,15 +41,15 @@
 #head-intro {
     background-color: var(--tangOrange);
     margin-top: 1vh;
-    position:relative; 
+    position: relative;
     top: 1%;
     right: 0%;
     font-size: 300%;
     color: var(--eggWhite);
-    text-align: center; 
+    text-align: center;
     margin-bottom: 2vh;
     padding: 1vh;
-} 
+}
 
 #nav_bar {
     & li a {
@@ -57,11 +59,12 @@
         padding: 15px 16px;
         text-decoration: none;
         float: right;
+
         &&:hover {
             color: var(--aprOrange);
             transition: all 0.3s ease-in-out;
         }
-      }
+    }
 }
 
 .searchBtn {
@@ -69,6 +72,7 @@
     left: 2%;
     background-color: darkred;
     color: var(--eggWhite);
+
     &&:hover {
         background-color: var(--tangOrange);
         color: var(--eggWhite);
@@ -80,6 +84,7 @@
     position: relative;
     background-color: darkred;
     color: var(--eggWhite);
+
     &&:hover {
         background-color: var(--tangOrange);
         color: var(--eggWhite);
@@ -93,11 +98,11 @@ ul {
     /* padding: 0; */
     overflow: hidden;
     background-color: var(--char);
-  }
-  
-  .active {
-    background-color:#f8f8f8;
-  }
+}
+
+.active {
+    background-color: #f8f8f8;
+}
 
 .footer {
     background-color: var(--char);
